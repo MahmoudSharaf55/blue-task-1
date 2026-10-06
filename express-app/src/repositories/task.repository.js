@@ -5,10 +5,6 @@ class TaskRepository {
     return Task.find().sort({ createdAt: -1 });
   }
 
-  async findById(id) {
-    return Task.findById(id);
-  }
-
   async create(taskData) {
     return Task.create(taskData);
   }

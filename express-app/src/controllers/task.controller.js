@@ -14,19 +14,6 @@ class TaskController {
     }
   }
 
-  async getTaskById(req, res, next) {
-    try {
-      const task = await taskService.getTaskById(req.params.id);
-
-      res.status(200).json({
-        success: true,
-        data: task,
-      });
-    } catch (error) {
-      next(error);
-    }
-  }
-
   async createTask(req, res, next) {
     try {
       const task = await taskService.createTask(req.body);

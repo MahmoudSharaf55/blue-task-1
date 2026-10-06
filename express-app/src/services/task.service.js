@@ -5,16 +5,6 @@ class TaskService {
     return taskRepository.findAll();
   }
 
-  async getTaskById(id) {
-    const task = await taskRepository.findById(id);
-    if (!task) {
-      const error = new Error(`Task with id '${id}' not found`);
-      error.statusCode = 404;
-      throw error;
-    }
-    return task;
-  }
-
   async createTask(taskData) {
     return taskRepository.create(taskData);
   }

@@ -10,15 +10,6 @@ export const taskService = {
     return data.data;
   },
 
-  async getById(id) {
-    const res = await fetch(`${API_URL}/${id}`);
-    const data = await res.json();
-    if (!res.ok) {
-      throw new Error(data.message || 'Failed to fetch task');
-    }
-    return data.data;
-  },
-
   async create(taskData) {
     const res = await fetch(API_URL, {
       method: 'POST',
